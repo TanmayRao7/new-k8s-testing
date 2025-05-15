@@ -30,7 +30,7 @@ spec:
         helm:
           valueFiles:
           - ../../helm-charts/{{ .toolpath }}/values.yaml
-          - ../../clusterconfig/tools/{{ .toolname }}/{{ .name }}-values.yaml
+          - ../../clusterconfig/tools/{{ .toolname }}/{{ .env_name }}-values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
