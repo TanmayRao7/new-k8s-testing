@@ -18,10 +18,10 @@ affinity: {}
 
 resources:
   requests:
-    cpu: 50m
+    cpu: 51m
     memory: 100Mi
   limits:
-    cpu: 50m
+    cpu: 51m
     memory: 100Mi
 
 priorityClassName: ""
