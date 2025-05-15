@@ -19,7 +19,7 @@ spec:
             elementsYaml: '{{ .key.components | toJson }}'
   template:
     metadata:
-      name: '{{ .name }}-{{ .toolname }}'
+      name: '{{ .toolname }}-{{ .env }}'
       namespace: argocd
     spec:
       project: default
