@@ -16,7 +16,7 @@ spec:
             - path: tools.yml
         - list:
             elements: []
-            elementsYaml: '{{ .key.components | toJSON }}'
+            elementsYaml: '{{ .key.components | toJson }}'
   template:
     metadata:
       name: '{{ .name }}-{{.path.basename}}'
