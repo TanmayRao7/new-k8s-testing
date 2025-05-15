@@ -1,0 +1,5 @@
+key:
+  components:
+    - name: secrets
+      toolname: secrets
+      toolpath: secrets
