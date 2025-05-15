@@ -14,7 +14,7 @@ spec:
             - path: clusterconfig/clusters/*/tools-list.yml
         - list:
             elements: []
-            elementsYaml: "{{ .key.components | toJson }}"
+            elementsYaml: '{{ .key.components }}'
   template:
     metadata:
       name: '{{ .name }}-{{.path.basename}}'
