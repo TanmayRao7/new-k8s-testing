@@ -1,8 +1,8 @@
 defaults: &defaultValues
-  env: dev
+  env_name: dev
 key:
   components:
-  - name: secrets-store-csi-driver-provider
+  - env_name: dev
     toolname: secrets-store-csi-driver-provider
     toolpath: secrets-store-csi-driver-provider
     <<: *defaultValues
