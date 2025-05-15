@@ -1,6 +1,3 @@
-defaults: &defaultValues
-  server: ''
-  namespace: dev
 key:
   components:
     - toolname: secrets-store-csi-driver
