@@ -30,7 +30,7 @@ spec:
           - ../../helm-charts/{{ .toolpath }}/values.yaml
           - ../../clusters/{{ .name }}/{{ .toolname }}-values.yaml
       destination:
-        server: '{{.clusterName}}'
+        server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
       syncPolicy:
         automated: null

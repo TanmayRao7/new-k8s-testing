@@ -12,5 +12,5 @@ defaults: &defaultValues
   toolpath: secrets-store-csi-driver
 key:
   components:
-    - name: secrets-store-csi-driver
-      <<: *defaultValues
+  - name: secrets-store-csi-driver
+    <<: *defaultValues
