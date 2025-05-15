@@ -4,35 +4,35 @@ metadata:
   name: tools-appset
   namespace: argocd
 spec:
-    generators:
-      - matrix:
-          generators:
-          - git:
-              repoURL: https://github.com/TanmayRao7/new-k8s-testing
-              revision: master
-              files:
-              - path: clusterconfig/clusters/*/tools-list.yml
-          - list:
-              elements: []
-              elementsYaml: "{{ .key.components | toJson }}"
-    template:
-      metadata:
-        name: '{{ .name }}-{{.path.basename}}'
-        namespace: argocd
-      spec:
-        project: default
-        source:
-          repoURL: https://github.com/TanmayRao7/new-k8s-testing
-          path: 'helm-charts/{{ .toolpath }}'
-          targetRevision: master
-          helm:
-            valueFiles:
-            - ../../helm-charts/{{ .toolpath }}/values.yaml
-            - ../../clusters/{{ .name }}/{{ .toolname }}-values.yaml
-        destination:
-          server: '{{.clusterName}}'
-          namespace: '{{.path.basename}}'
-        syncPolicy:
-          automated: null
-          syncOptions:
-            - CreateNamespace=true
+  generators:
+    - matrix:
+        generators:
+        - git:
+            repoURL: https://github.com/TanmayRao7/new-k8s-testing
+            revision: master
+            files:
+            - path: clusterconfig/clusters/*/tools-list.yml
+        - list:
+            elements: []
+            elementsYaml: "{{ .key.components | toJson }}"
+  template:
+    metadata:
+      name: '{{ .name }}-{{.path.basename}}'
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/TanmayRao7/new-k8s-testing
+        path: 'helm-charts/{{ .toolpath }}'
+        targetRevision: master
+        helm:
+          valueFiles:
+          - ../../helm-charts/{{ .toolpath }}/values.yaml
+          - ../../clusters/{{ .name }}/{{ .toolname }}-values.yaml
+      destination:
+        server: '{{.clusterName}}'
+        namespace: '{{.path.basename}}'
+      syncPolicy:
+        automated: null
+        syncOptions:
+          - CreateNamespace=true
