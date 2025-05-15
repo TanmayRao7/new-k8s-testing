@@ -8,7 +8,7 @@ spec:
     - matrix:
         generators:
         - git:
-            repoURL: https://github.com/TanmayRao7/new-k8s-testing
+            repoURL: https://github.com/TanmayRao7/new-k8s-testing.git
             revision: master
             files:
             - path: clusterconfig/clusters/*/tools-list.yml
@@ -22,7 +22,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/TanmayRao7/new-k8s-testing
+        repoURL: https://github.com/TanmayRao7/new-k8s-testing.git
         path: 'helm-charts/{{ .toolpath }}'
         targetRevision: master
         helm:

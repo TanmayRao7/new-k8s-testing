@@ -8,9 +8,9 @@
 #     toolpath: secrets-store-csi-driver
 #     <<: *defaultValues
 defaults: &defaultValues
-  toolname: secrets-store-csi-driver
-  toolpath: secrets-store-csi-driver
+  targetversion: master
+  clusterName: test #To be replaced by the DEV cluster name
 key:
   components:
-  - name: secrets-store-csi-driver
-    <<: *defaultValues
+    - name: event-management
+      <<: *defaultValues
