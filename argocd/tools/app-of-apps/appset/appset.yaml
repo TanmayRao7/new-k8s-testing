@@ -4,6 +4,8 @@ metadata:
   name: tools-appset
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
     - matrix:
         generators:
@@ -14,7 +16,7 @@ spec:
             - path: tools.yml
         - list:
             elements: []
-            elementsYaml: '{{ .key | toJSON }}'
+            elementsYaml: '{{ .key.components | toJSON }}'
   template:
     metadata:
       name: '{{ .name }}-{{.path.basename}}'
