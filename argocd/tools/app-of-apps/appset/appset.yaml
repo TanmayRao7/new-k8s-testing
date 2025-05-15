@@ -11,7 +11,7 @@ spec:
             repoURL: https://github.com/TanmayRao7/new-k8s-testing.git
             revision: master
             files:
-            - path: clusterconfig/clusters/*/tools-list.yml
+            - path: tools.yml
         - list:
             elements: []
             elementsYaml: '{{ .key.components | toJSON }}'
