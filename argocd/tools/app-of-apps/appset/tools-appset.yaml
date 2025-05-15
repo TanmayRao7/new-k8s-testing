@@ -11,7 +11,7 @@ spec:
             repoURL: https://github.com/TanmayRao7/new-k8s-testing.git
             revision: master
             files:
-            - path: clusters/*/cluster.yml
+            - path: clusters/dev/cluster.yml
         - list:
             elements: []
             elementsYaml: "{{ .key.components | toJson }}"
@@ -30,8 +30,8 @@ spec:
           - ../../helm-charts/secrets-store-csi-driver-provider-aws/values.yaml
           - ../../clusters/{{ .name }}/{{ .toolname }}-values.yaml
       destination:
-        server: '{{ .server }}'
-        namespace: kube-system
+        server: 'https://kubernetes.default.svc'
+        namespace: default
       syncPolicy:
         automated:
           prune: true
