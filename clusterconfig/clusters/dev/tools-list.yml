@@ -5,4 +5,6 @@ key:
   - env_name: dev
     toolname: secrets-store-csi-driver-provider
     toolpath: secrets-store-csi-driver-provider
+  - toolname: aws-secrets-service-provider-class
+    toolpath: aws-secrets-service-provider-class
     <<: *defaultValues

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: aws-secrets-chart
+description: A Helm chart for deploying a SecretProviderClass for AWS
+version: 0.1.0

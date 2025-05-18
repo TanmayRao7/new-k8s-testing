@@ -1,0 +1,6 @@
+name: aws-secrets-provider
+region: us-east-1
+objects: |
+  - objectName: "dev/app-credentials"
+    objectType: "secretsmanager"
+    objectAlias: "dev"
